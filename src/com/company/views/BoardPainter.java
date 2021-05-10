@@ -45,14 +45,13 @@ public class BoardPainter extends JPanel {
         Color color1 = new Color(194, 173, 247);
         Color color2 = new Color(21, 102, 39);
         Color primaryColor = color1;
-        boolean isBlack = true;
 
         for(int i = 0; i < numOfSquares; i++){
             for(int j = 0; j < numOfSquares; j++){
                 g.setColor(primaryColor);
                 g.fillRect(leftPos, topPos, sizeOfSquares, sizeOfSquares);
 
-                //we change leftpos
+                //we change left pos
                 leftPos += sizeOfSquares;
 
                 if(primaryColor.equals(color1)){
@@ -80,19 +79,13 @@ public class BoardPainter extends JPanel {
         g.setFont(new Font("Serif", Font.PLAIN, sizeOfSquares));
         g.setColor(Color.black);
 
-        Color color1 = new Color(194, 173, 247);
-        Color color2 = new Color(21, 102, 39);
-        Color primaryColor = color2;
-        boolean isBlack = true;
-
         for(int i = 0; i < numOfSquares; i++){
             for(int j = 0; j < numOfSquares; j++){
-                //g.setColor(primaryColor);
                 if(board.getSquares()[i][j].getPiece() != null){
                     g.drawString(board.getSquares()[i][j].getPiece().getValue(), leftPos, topPos + sizeOfSquares - (sizeOfSquares/10));
                 }
 
-                //we change leftpos
+                //we change left pos
                 leftPos += sizeOfSquares;
             }
             leftPos = offset;

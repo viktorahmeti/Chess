@@ -4,6 +4,9 @@ import com.company.board.*;
 import com.company.entities.Player;
 import com.company.enums.Color;
 import com.company.exceptions.*;
+import com.company.moves.Castle;
+import com.company.moves.Move;
+import com.company.moves.StandardMove;
 import com.company.pieces.King;
 import com.company.pieces.Piece;
 
@@ -108,8 +111,13 @@ public class Referee {
             }
 
             //see if king is in check
-            if(((King)board.getKingSquare(move.getPlayer()).getPiece()).inCheck())
+            try{
+                kingInCheck(move);
+            }
+            catch (InCheckCastleException e){
+                e.printMessage();
                 return false;
+            }
 
             //see if king is attacked
             try{
@@ -144,6 +152,11 @@ public class Referee {
         return false;
     }
 
+    private void kingInCheck(Move move) throws InCheckCastleException{
+        if(((King)board.getKingSquare(move.getPlayer()).getPiece()).inCheck())
+            throw new InCheckCastleException();
+    }
+
     private void seeIfCastled(Move move) throws AlreadyCastledException{
         if(move.getPlayer().hasCastled())
             throw new AlreadyCastledException();
@@ -167,7 +180,7 @@ public class Referee {
                 //columns 1, 2, and 3
                 for(int i = 1; i <= 3; i++){
                     if(board.getSquares()[7][i].getPiece() == null){
-                        if(board.getSquares()[7][i].isUnderAttack(board, Color.BLACK))
+                        if(board.getSquares()[7][i].isUnderAttack(board, Color.WHITE))
                             throw new CastleWithAttackedRoadException();
                     }
                     else{
@@ -181,7 +194,7 @@ public class Referee {
                 //columns 5 and 6
                 for(int i = 5; i <= 6; i++){
                     if(board.getSquares()[0][i].getPiece() == null){
-                        if(board.getSquares()[0][i].isUnderAttack(board, Color.WHITE))
+                        if(board.getSquares()[0][i].isUnderAttack(board, Color.BLACK))
                             throw new CastleWithAttackedRoadException();
                     }
                     else{

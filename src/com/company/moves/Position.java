@@ -1,4 +1,4 @@
-package com.company.board;
+package com.company.moves;
 
 public class Position {
     private int row;

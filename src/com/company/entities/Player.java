@@ -1,9 +1,9 @@
 package com.company.entities;
 
-import com.company.board.Castle;
-import com.company.board.Move;
-import com.company.board.Resignation;
-import com.company.board.StandardMove;
+import com.company.moves.Castle;
+import com.company.moves.Move;
+import com.company.moves.Resignation;
+import com.company.moves.StandardMove;
 import com.company.enums.Color;
 
 import javax.swing.*;

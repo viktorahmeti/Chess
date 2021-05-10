@@ -1,6 +1,6 @@
 package com.company.exceptions;
 
-import com.company.board.Move;
+import com.company.moves.Move;
 
 import javax.swing.*;
 

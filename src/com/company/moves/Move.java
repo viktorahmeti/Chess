@@ -1,4 +1,4 @@
-package com.company.board;
+package com.company.moves;
 
 import com.company.entities.Player;
 

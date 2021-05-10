@@ -1,7 +1,7 @@
 package com.company.pieces;
 
 import com.company.board.Board;
-import com.company.board.StandardMove;
+import com.company.moves.StandardMove;
 import com.company.enums.Color;
 
 public class King extends Piece {
@@ -42,7 +42,6 @@ public class King extends Piece {
             return false;
         if(horDistance > 1 || verDistance > 1)
             return false;
-        //there is no need to check for in-betweens because referee checks that for us
         return true;
     }
 }

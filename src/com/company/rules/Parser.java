@@ -1,7 +1,7 @@
 package com.company.rules;
 
-import com.company.board.Position;
-import com.company.board.StandardMove;
+import com.company.moves.Position;
+import com.company.moves.StandardMove;
 import com.company.exceptions.InvalidInputException;
 
 public class Parser {

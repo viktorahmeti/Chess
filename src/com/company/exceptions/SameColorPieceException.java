@@ -1,7 +1,5 @@
 package com.company.exceptions;
 
-import com.company.board.Move;
-
 import javax.swing.*;
 
 public class SameColorPieceException extends Exception {

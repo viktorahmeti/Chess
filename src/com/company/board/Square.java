@@ -1,17 +1,16 @@
 package com.company.board;
 
 import com.company.enums.Color;
+import com.company.moves.Position;
 import com.company.pieces.*;
 
 public class Square {
     private Position position;
     private Piece piece;
-    private boolean underAttack;
 
     public Square(Position position, Piece piece) {
         this.position = position;
         this.piece = piece;
-        underAttack = false;
     }
 
     public Position getPosition() {

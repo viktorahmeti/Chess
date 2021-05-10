@@ -1,7 +1,7 @@
 package com.company.pieces;
 
 import com.company.board.Board;
-import com.company.board.StandardMove;
+import com.company.moves.StandardMove;
 import com.company.enums.Color;
 
 public class Rook extends Piece {

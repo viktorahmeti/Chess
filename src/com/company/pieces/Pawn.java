@@ -1,7 +1,7 @@
 package com.company.pieces;
 
 import com.company.board.Board;
-import com.company.board.StandardMove;
+import com.company.moves.StandardMove;
 import com.company.enums.Color;
 
 public class Pawn extends Piece {
@@ -14,7 +14,7 @@ public class Pawn extends Piece {
     }
 
     //@TODO refactor this better
-    //@TODO add support for pawn promotion
+    //@TODO en-passant
     @Override
     public boolean canMove(StandardMove move, Board board) {
         int startRow = move.getStart().getRow();
@@ -25,7 +25,7 @@ public class Pawn extends Piece {
         int horDistance = startCol - endCol;
         int verDistance = startRow - endRow;
 
-        //it all depends on the color so
+        //it all depends on the color
         if(color == Color.WHITE){
             //if it moved straight
             if(horDistance == 0){
@@ -44,7 +44,7 @@ public class Pawn extends Piece {
                     return false;
                 }
             }
-            //if it moved diagonally or smth
+            //if it moved diagonally
             else{
                 if(verDistance == 1){
                     if(horDistance == 1 || horDistance == -1){
@@ -75,7 +75,7 @@ public class Pawn extends Piece {
                     return false;
                 }
             }
-            //if it moved diagonally or smth
+            //if it moved diagonally
             else{
                 if(verDistance == -1){
                     if(horDistance == 1 || horDistance == -1){

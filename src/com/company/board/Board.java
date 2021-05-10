@@ -2,9 +2,9 @@ package com.company.board;
 
 import com.company.enums.Color;
 import com.company.entities.Player;
+import com.company.moves.Castle;
+import com.company.moves.Position;
 import com.company.pieces.*;
-
-import java.sql.SQLOutput;
 
 public class Board {
     private Square[][] squares;
@@ -80,7 +80,6 @@ public class Board {
     }
 
     public Square getKingSquare(Player p){
-        //implement this nicely
         if(p.getColor() == Color.WHITE)
             return whiteKing;
         else
@@ -121,7 +120,6 @@ public class Board {
     }
 
     public void castle(Castle move){
-        Piece temp;
         if(move.kingSide()){
             if(move.getPlayer().getColor() == Color.WHITE){
                 squares[7][6].setPiece(squares[7][4].getPiece());

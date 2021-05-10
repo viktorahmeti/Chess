@@ -1,10 +1,10 @@
 package com.company.game;
 
 import com.company.board.Board;
-import com.company.board.Resignation;
+import com.company.moves.Resignation;
 import com.company.enums.Color;
 import com.company.views.BoardPainter;
-import com.company.board.Move;
+import com.company.moves.Move;
 import com.company.entities.Player;
 import com.company.rules.Referee;
 import com.company.views.IconProvider;
