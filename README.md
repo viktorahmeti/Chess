@@ -1,8 +1,5 @@
-# Chess
-A simple Java Chess Game with Swing
+# A simple Java Chess Game with Swing
 
-Homework project for FSHMN
+Homework project for FSHMN. Includes a simple Swing UI with special Unicode Characters for chess pieces. It also contains error handling with custom exceptions.
 
-This is an IntelliJ project so all those standards apply
-
-Run from Main.main()
+Run as Maven Project
